@@ -107,10 +107,10 @@ h1 {
 }
 
 .win {
-  background-color: darkcyan;
+  background-color: rgb(17, 17, 17);
 }
 
 .cell-bomb {
-  background-image: url('./images/bomb.png');
+  background-image: url('./minesweeper/images/bomb.png');
   background-size: contain;
 }

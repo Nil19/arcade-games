@@ -9,10 +9,11 @@ const endGameText = document.querySelector('.end-screen-text');
 const playAgainButton = document.querySelector('.play-again');
 
 const totalCells = 100;
-const totalBombs = 90;
-const maxScore = 5;
+const totalBombs = 10;
+const maxScore = 90;
 // this is an array
 const bombsList = [];
+const targetScore = totalCells - totalBombs;
 
 let score = 0;
 
@@ -59,7 +60,7 @@ function endGame(isVictory) {
     endGameText.innerHTML = 'YOU<br />WON';
     endGameScreen.classList.add('win');
   }
-  endGameScreen.claasList.remove('hidden');
+  endGameScreen.classList.remove('hidden');
 }
 
 playAgainButton.addEventListener('click', function () {
