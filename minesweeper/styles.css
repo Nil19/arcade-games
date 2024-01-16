@@ -2,44 +2,48 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
   font-family: 'Darker Grotesque';
   font-size: 40px;
-  color: #111111;
-  background-color: rgb(212, 212, 212);
+  color: rgb(228, 228, 228);
+  background-color: rgb(15, 15, 15);
   padding: 16px;
   display: flex;
   justify-content: center;
 }
 
 .game-container {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(15, 15, 15);
   width: 484px;
   padding-top: 100px;
 }
 
 .game-panel {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(15, 15, 15);
 }
 
 .game-board {
-  border: 2px solid rgb(17, 17, 17);
+  border: 2px solid rgb(79, 175, 68);
   position: relative;
 }
 
 h1 {
   font-size: 40px;
   font-family: 'Press Start 2P';
-  padding: 20px;
+  padding: 10px;
+  margin: 10px;
+  text-shadow: 2px 2px rgb(206, 206, 206);
+  color: rgb(83, 213, 66);
 }
 
 .score {
   font-size: 30px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 25px;
+  color: rgb(79, 175, 68);
 }
 
 .grid {
@@ -48,7 +52,7 @@ h1 {
 }
 
 .cell {
-  border: 1px solid rgb(17, 17, 17);
+  border: 1px solid rgb(79, 175, 68);
   width: 48px;
   height: 48px;
   cursor: pointer;
@@ -60,8 +64,9 @@ h1 {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(41, 57, 126, 0.849);
-  color: white;
+  background-color: rgba(17, 17, 17, 0.849);
+  color: rgb(79, 175, 68);
+  text-shadow: 2px 2px rgb(237, 237, 237);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -79,17 +84,33 @@ h1 {
 .btn {
   font-size: 24px;
   font-family: 'Darker Grotesque';
-  padding: 4px 20px 8px 20px; 
+  padding: 4px 20px 8px 20px;
   cursor: pointer;
   text-transform: uppercase;
-  border: 2px solid rgb(17, 17, 17);
+  border: 2px solidrgb(69, 179, 54);
+  background-color: rgb(17, 17, 17);
+  color: rgb(83, 213, 66);
 }
 
 .btn:hover {
-  background-color: rgb(17, 17, 17);
-  color: white;
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17);
 }
 
 .hidden {
   display: none;
+}
+
+.cell-clicked {
+  background-color: rgb(104, 104, 104);
+  cursor: not-allowed;
+}
+
+.win {
+  background-color: darkcyan;
+}
+
+.cell-bomb {
+  background-image: url('./images/bomb.png');
+  background-size: contain;
 }
