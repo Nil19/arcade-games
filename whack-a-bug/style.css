@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    background-color: rgb(65, 68, 221);
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 20px;
+  }
+  
+  .board {
+    display: flex;
+  }
+  
+  .game-area {
+    position: relative;
+    padding: 50px;
+  }
+  
+  .cell {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(255, 255, 255);
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  #grid {
+    width: 380px;
+    height: 380px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+  }
+  
+  .bug {
+    background-image: url('./images/bug.png');
+  }
+  
+  .splat {
+    background-image: url('./images/bug-splat.png');
+  }
+  
+  .game-data {
+    padding: 50px;
+    width: 300px;
+  }
+  
+  h1 {
+    padding-top: 150px;
+  }
+  
+  p {
+    margin-bottom: 36px;
+    margin-top: 28px;
+  }
+  
+  h4 {
+    margin-top: 28px;
+  }
+  

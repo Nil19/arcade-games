@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+body {
+  font-family: 'Darker Grotesque';
+  font-size: 40px;
+  color: rgb(228, 228, 228);
+  background-color: rgb(15, 15, 15);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+a {
+  color: rgb(0, 166, 255);
+  font-family: 'Darker Grotesque';
+  text-decoration: none;
+
+}
+a:hover {
+  color: rgb(228, 228, 228);
+}
