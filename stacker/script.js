@@ -56,7 +56,7 @@ function draw() {
 //end game function
 function endGame(isVictory) {
   if (isVictory) {
-    endGameText.innerHTML = 'YOU<br>WON!';
+    endGameText.innerHTML='YOU<br>WON!';
     endGameScreen.classList.add('win');
   }
   // removing the hidden class from html
@@ -84,7 +84,7 @@ function checkLost() {
   // element under each bar
 
   for (let i = 0; i < currentRow.length; i++) {
-    // if no stack below a bar element, remove 1 bar piece for both the current adn new bar stack in the next loop
+    // if no stack below a bar element, remove 1 bar piece for both the current and new bar stack in the next loop
     if (currentRow[i] === 1 && prevRow[i] === 0) {
       currentRow[i] = 0;
       barSize--;
@@ -93,6 +93,7 @@ function checkLost() {
     if (barSize === 0) {
       isGameOver = true;
       clearInterval(gameInterval);
+      endGame(false);
     }
   }
 }
@@ -151,6 +152,7 @@ function moveBar() {
     }
   }
 }
+draw();
 // move bar function calls
 function main() {
   draw();
