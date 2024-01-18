@@ -111,7 +111,7 @@ function onStack() {
   if (isGameOver) return;
 
   // this is same as below currentRowIndex--;
-  currentRowIndex = currentRowIndex - 1;
+  currentRowIndex--;
   barDirection = 'right';
 
   for (let i = 0; i < barSize; i++) {
@@ -134,7 +134,6 @@ function moveLeft(currentRow) {
 
 function moveBar() {
   const currentRow = gridMatrix[currentRowIndex];
-  console.log(currentRow);
 
   if (barDirection === 'right') {
     moveRight(currentRow);
@@ -152,7 +151,7 @@ function moveBar() {
     }
   }
 }
-draw();
+
 // move bar function calls
 function main() {
   draw();
