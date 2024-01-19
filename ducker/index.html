@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stacker</title>
+    <title>Ducker</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,30 +15,33 @@
     />
 
     <!-- Stylesheet -->
-    <link href="./styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <div class ="game-container">
-      <header>
-        <h1>Stacker</h1>
+    <!-- Container element for the game board -->
+    <div class="game-container">
+      <!-- Game title and timer -->
+      <header class="game-panel">
+        <h1>Ducker</h1>
         <div class="score">
-          <span>SCORE</span>
-          <span class="score-counter">00000</span>
+          <span>TIME</span>
+          <span class="timer">00015</span>
         </div>
       </header>
-      <main class ="game-board">
-        <!--empty in html and generate is js file -->
+
+      <main class="game-board">
+        <!-- Game grid -->
         <div class="grid"></div>
 
-        <!-- placeholder for game over screen -->
+        <!-- Game over -->
         <div class="end-game-screen hidden">
-          <h2 class="end-game-text">Game<br>Over</h2>
+          <h2 class="end-game-text">Game<br />Over</h2>
           <button class="btn play-again">Play Again</button>
+        </div>
       </main>
-      <button class="btn btn-full stack">Stack</button>
     </div>
-      </header>
+
     <!-- JavaScript -->
     <script src="./script.js"></script>
   </body>

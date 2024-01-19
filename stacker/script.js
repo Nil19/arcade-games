@@ -56,7 +56,7 @@ function draw() {
 //end game function
 function endGame(isVictory) {
   if (isVictory) {
-    endGameText.innerHTML='YOU<br>WON!';
+    endGameText.innerHTML = 'YOU<br>WON!';
     endGameScreen.classList.add('win');
   }
   // removing the hidden class from html
@@ -151,7 +151,7 @@ function moveBar() {
     }
   }
 }
-
+draw();
 // move bar function calls
 function main() {
   draw();
