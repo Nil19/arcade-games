@@ -19,15 +19,22 @@
 }
 
 body {
+  font-family: 'Darker Grotesque';
+  font-size: 40px;
+  color: rgb(228, 228, 228);
+  background-color: rgb(15, 15, 15);
   padding: 16px;
-  font-family: 'Darker Grotesque', sans-serif;
-  line-height: 1;
-  color: rgb(0, 23, 50);
-  background-color: rgb(216, 238, 232);
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
   font-size: 40px;
+  font-family: 'Press Start 2P';
+  padding: 10px;
+  margin: 10px;
+  text-shadow: 2px 2px rgb(206, 206, 206);
+  color: rgb(83, 213, 66);
 }
 
 .btn {
@@ -37,11 +44,14 @@ h1 {
   /* width: 50%; */
   cursor: pointer;
   text-transform: uppercase;
-  border: 2px solid rgb(0, 23, 50);
+  border: 2px solid rgb(69, 179, 54);
+  background-color: rgb(17, 17, 17);
+  color: rgb(83, 213, 66);
 }
 
 .btn:hover {
-  background-color: rgb(203, 224, 221);
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17);
 }
 
 .btn-full {
@@ -51,7 +61,9 @@ h1 {
 .score {
   display: flex;
   justify-content: space-between;
-  font-size: 32px;
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: rgb(79, 175, 68);
   /* font-weight: 700; */
 }
 
@@ -60,11 +72,13 @@ h1 {
 .game-board {
   position: relative;
   margin-bottom: 8px;
-  border: 2px solid rgb(0, 23, 50);
+  border: 2px solid rgb(79, 175, 68);
 }
 
 .game-container {
   width: calc((48px * 6) + 4px);
+  background-color: rgb(15, 15, 15);
+  padding-top: 100px;
 }
 
 .grid {
@@ -77,13 +91,13 @@ h1 {
   width: 48px;
   height: 48px;
   cursor: pointer;
-  outline: 1px dashed black;
+  outline: 1px dashed rgba(79, 175, 68, 0.289);;
 }
 
 .bar {
-  background-color: #f1754e;
+  background-color: rgb(79, 175, 68);
   border-radius: 8px;
-  border: 2px solid rgb(0, 23, 50);
+  border: 2px solid rgb(15, 15, 15);
 }
 
 /* # Game over */
