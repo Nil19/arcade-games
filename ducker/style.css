@@ -15,98 +15,100 @@
 /* # Generic */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Darker Grotesque';
-    font-size: 40px;
-    color: rgb(228, 228, 228);
-    background-color: rgb(15, 15, 15);
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .game-container {
-    width: calc((48px * 9) + 4px);
-    background-color: rgb(15, 15, 15);
-    padding-top: 100px;
-  }
-  
-  /* # Game Panel */
-  
-  h1 {
-    font-size: 40px;
-    font-family: 'Press Start 2P';
-    padding: 10px;
-    margin: 10px;
-    text-shadow: 2px 2px rgb(206, 206, 206);
-    color: rgb(83, 213, 66);
-  }
-  
-  .score {
-    font-size: 30px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    color: rgb(79, 175, 68);
-  }
-  
-  /* # Game grid */
-  
-  .game-board {
-    border: 2px solid rgb(79, 175, 68);
-    position: relative;
-  }
-  
-  .grid {
-    width: calc(48px * 9); /* 👈 change multiplier based on grid row count */
-    height: calc(48px * 9); /*👈 change multiplier based on game column count */
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .cell {
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    outline: 1px dashed rgb(79, 175, 68);
-    background-position: center;
-    background-size: contain;
-  }
-  
-  .cell-dark {
-    background-color: rgb(203, 224, 221);
-  }
-  
-  .river {
-    outline: none;
-    background-color: rgba(0, 191, 255, 0.215);
-  }
-  
-  .road {
-    outline: none;
-    border-top: 1px dashed rgb(79, 175, 68);
-    border-bottom: 1px dashed rgb(79, 175, 68);
-    background-color: rgba(79, 175, 68, 0.215);
-  }
-  
-  .car {
-    background-image: url('./images/car.png');
-  }
-  
-  .bus {
-    background-image: url('./images/bus.png');
-  }
-  
-  .wood {
-    background-image: url('./images/wood.png');
-  }
-  
-  /* 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Darker Grotesque';
+  font-size: 40px;
+  color: rgb(228, 228, 228);
+  background-color: rgb(15, 15, 15);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-container {
+  width: calc((48px * 9) + 4px);
+  background-color: rgb(15, 15, 15);
+  padding-top: 100px;
+}
+
+/* # Game Panel */
+
+h1 {
+  font-size: 40px;
+  font-family: 'Press Start 2P';
+  padding: 10px;
+  margin: 10px;
+  text-shadow: 2px 2px rgb(206, 206, 206);
+  color: rgb(83, 213, 66);
+}
+
+.score {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  color: rgb(79, 175, 68);
+}
+
+/* # Game grid */
+
+.game-board {
+  border: 2px solid rgb(79, 175, 68);
+  position: relative;
+}
+
+.grid {
+  width: calc(48px * 9);
+  /* 👈 change multiplier based on grid row count */
+  height: calc(48px * 9);
+  /*👈 change multiplier based on game column count */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  outline: 1px dashed rgb(79, 175, 68);
+  background-position: center;
+  background-size: contain;
+}
+
+.cell-dark {
+  background-color: rgb(203, 224, 221);
+}
+
+.river {
+  outline: none;
+  background-color: rgba(0, 191, 255, 0.215);
+}
+
+.road {
+  outline: none;
+  border-top: 1px dashed rgb(79, 175, 68);
+  border-bottom: 1px dashed rgb(79, 175, 68);
+  background-color: rgba(79, 175, 68, 0.215);
+}
+
+.car {
+  background-image: url('./images/car.png');
+}
+
+.bus {
+  background-image: url('./images/bus.png');
+}
+
+.wood {
+  background-image: url('./images/wood.png');
+}
+
+/* 
   This will work in a normal IDE / code editor but StackBlitz does not support GIF filetypes.
   See the 2 styles below for an alternative approach using animations.
   
@@ -118,112 +120,125 @@
       background-image: url('./images/duck-walk.gif'), url('images/wood.png');
   }
   */
-  
-  /* Alternative approach to animate the duck - for StackBlitz only */
-  .duck {
-    animation: changeDuckImage 0.6s step-start;
-  }
-  @keyframes changeDuckImage {
-    0% {
-      background-image: url('./images/duck-walk/duck-walk-1.png');
-    }
-    25% {
-      background-image: url('./images/duck-walk/duck-walk-2.png');
-    }
-    75% {
-      background-image: url('./images/duck-walk/duck-walk-3.png');
-    }
-    100% {
-      background-image: url('./images/duck-walk/duck-walk-4.png');
-    }
-  }
-  
-  /* Alternative approach to animate the duck when on the river - for StackBlitz only */
-  .river.duck {
-    animation: changeRiverDuckImage 0.6s step-start;
-  }
-  @keyframes changeRiverDuckImage {
-    0% {
-      background-image: url('./images/duck-walk/duck-walk-1.png'),
-        url('./images/wood.png');
-    }
-    25% {
-      background-image: url('./images/duck-walk/duck-walk-2.png'),
-        url('./images/wood.png');
-    }
-    75% {
-      background-image: url('./images/duck-walk/duck-walk-3.png'),
-        url('./images/wood.png');
-    }
-    100% {
-      background-image: url('./images/duck-walk/duck-walk-4.png'),
-        url('./images/wood.png');
-    }
-  }
-  
-  .time-up,
-  .duck-arrived {
-    background-image: url('./images/duck-standing.png');
-  }
-  
-  .duck-hit {
-    background-image: url('./images/duck-hit.png');
-  }
-  
-  .duck-drowned {
-    background-image: url('./images/duck-drowned.png');
-  }
-  
-  /* # Game over */
-  
-  .end-game-screen {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(17, 17, 17, 0.849);
-    color: rgb(79, 175, 68);
-    text-shadow: 2px 2px rgb(237, 237, 237);
 
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+/* Alternative approach to animate the duck - for StackBlitz only */
+.duck {
+  animation: changeDuckImage 0.6s step-start;
+}
+
+@keyframes changeDuckImage {
+  0% {
+    background-image: url('./images/duck-walk/duck-walk-1.png');
   }
-  
-  .win {
-    background-color: rgb(17, 17, 17);
+
+  25% {
+    background-image: url('./images/duck-walk/duck-walk-2.png');
   }
-  
-  .end-game-text {
-    font-size: 48px;
-    font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
+
+  75% {
+    background-image: url('./images/duck-walk/duck-walk-3.png');
   }
-  
-  .btn {
-    font-size: 24px;
-    font-family: 'Darker Grotesque', sans-serif;
-    padding: 4px 20px 8px 20px;
-    /* width: 50%; */
-    cursor: pointer;
-    text-transform: uppercase;
-    border: 2px solid rgb(69, 179, 54);
-    background-color: rgb(17, 17, 17);
-    color: rgb(83, 213, 66);
+
+  100% {
+    background-image: url('./images/duck-walk/duck-walk-4.png');
   }
-  
-  .btn:hover {
-    background-color: rgb(79, 175, 68);
-    color: rgba(17, 17, 17);
+}
+
+/* Alternative approach to animate the duck when on the river - for StackBlitz only */
+.river.duck {
+  animation: changeRiverDuckImage 0.6s step-start;
+}
+
+@keyframes changeRiverDuckImage {
+  0% {
+    background-image: url('./images/duck-walk/duck-walk-1.png'),
+      url('./images/wood.png');
   }
-  
-  /* # Utilities */
-  
-  .hidden {
-    display: none;
+
+  25% {
+    background-image: url('./images/duck-walk/duck-walk-2.png'),
+      url('./images/wood.png');
   }
-  
+
+  75% {
+    background-image: url('./images/duck-walk/duck-walk-3.png'),
+      url('./images/wood.png');
+  }
+
+  100% {
+    background-image: url('./images/duck-walk/duck-walk-4.png'),
+      url('./images/wood.png');
+  }
+}
+
+.time-up,
+.duck-arrived {
+  background-image: url('./images/duck-standing.png');
+}
+
+.duck-hit {
+  background-image: url('./images/duck-hit.png');
+}
+
+.duck-drowned {
+  background-image: url('./images/duck-drowned.png');
+}
+
+/* # Game over */
+
+.end-game-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.849);
+  color: rgb(79, 175, 68);
+  text-shadow: 2px 2px rgb(237, 237, 237);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.win {
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17, 0.849);
+  text-shadow: 2px 2px rgb(237, 237, 237);
+}
+
+.end-game-text {
+  font-size: 48px;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-size: 24px;
+  font-family: 'Darker Grotesque', sans-serif;
+  padding: 4px 20px 8px 20px;
+  /* width: 50%; */
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid rgb(79, 175, 68);
+  background-color: rgb(17, 17, 17);
+  color: rgb(83, 213, 66);
+}
+.btn-play-again:hover {
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17);
+}
+
+.btn:hover {
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17);
+}
+
+/* # Utilities */
+
+.hidden {
+  display: none;
+}
