@@ -91,7 +91,8 @@ h1 {
   width: 48px;
   height: 48px;
   cursor: pointer;
-  outline: 1px dashed rgba(79, 175, 68, 0.289);;
+  outline: 1px dashed rgba(79, 175, 68, 0.289);
+  ;
 }
 
 .bar {
@@ -104,21 +105,23 @@ h1 {
 .end-game-screen {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(241, 117, 78, 0.7);
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.849);
+  color: rgb(79, 175, 68);
+  text-shadow: 2px 2px rgb(237, 237, 237);
 
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
 }
 
 .win {
-  background-color: rgba(78, 241, 187, 0.7);
+  background-color: rgb(17, 17, 17);
 }
 
 .end-game-text {
