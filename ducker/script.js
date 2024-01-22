@@ -65,6 +65,8 @@ function drawGrid() {
   });
 }
 
+
+// DUCK FUNCTIONS
 function placeDuck() {
   contentBeforeDuck = gridMatrix[duckPosition.y][duckPosition.x];
   gridMatrix[duckPosition.y][duckPosition.x] = 'duck';
@@ -73,8 +75,7 @@ function placeDuck() {
 
 function moveDuck(event) {
   const key = event.key;
-  console.log('key', key);
-  console.log('contentBeforeDuck:', contentBeforeDuck);
+  console.log(key);
   gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
   // arrows and WASD
   switch (key) {
@@ -99,7 +100,24 @@ function moveDuck(event) {
       if (duckPosition.x < 8) duckPosition.x++;
       break;
   }
+
   render();
+}
+
+function updateDuckPosition() {
+  gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
+
+  if (contentBeforeDuck === 'wood') {
+    if (duckPosition.y === 1 && duckPosition.x < 8) duckPosition.x++;
+    else if (duckPosition.y === 2 && duckPosition.x > 0) duckPosition.x--;
+  }
+}
+
+function checkPosition() {
+  if (duckPosition.y === victoryRow) endGame('duck-arrived');
+  else if (contentBeforeDuck === 'river') endGame('duck-drowned');
+  else if (contentBeforeDuck === 'car' || contentBeforeDuck === 'bus')
+    endGame('duck-hit');
 }
 
 // animation functions
@@ -131,13 +149,6 @@ function animateGame() {
   moveRight(6);
 }
 
-function checkPosition() {
-  if (duckPosition.y === victoryRow) endGame('duck-arrived');
-  else if (contentBeforeDuck == 'river') endGame('duck-drowned');
-  else if (contentBeforeDuck === 'car' || contentBeforeDuck === 'bus')
-    endGame('duck-hit');
-}
-
 // game logic win/lose
 function endGame(reason) {
   //victory
@@ -158,7 +169,7 @@ function endGame(reason) {
   endGameScreen.classList.remove('hidden');
 }
 
-function countDown() {
+function countdown() {
   if (time != 0) {
     time--;
     timer.innerText = time.toString().padStarts(5, '0');
@@ -170,6 +181,7 @@ function countDown() {
   }
 }
 
+//RUNNING THE GAME
 // rendering
 function render() {
   placeDuck();
@@ -179,11 +191,15 @@ function render() {
 
 // Annonymous function
 const renderLoop = setInterval(function () {
-  gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
+  updateDuckPosition();
+  animateGame();
   render();
 }, 600);
+
+const countdownLoop = setInterval(countdown, 1000);
 
 document.addEventListener('keyup', moveDuck);
 playAgainBtn.addEventListener('click', function () {
   location.reload();
 });
+
