@@ -135,11 +135,10 @@ h1 {
   }
 
   .game-container {
-    width: 100%;
-    padding-top: 50px;
+    width: auto;
   }
 
   .grid, .cell {
-    width: 100%;
+    width: auto;
   }
 }
