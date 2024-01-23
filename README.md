@@ -1,4 +1,4 @@
-#ARCADE GAMES
+ARCADE GAMES
 
 Minesweeper
 Stacker
