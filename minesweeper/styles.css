@@ -112,6 +112,6 @@ h1 {
   background-image: url('./images/bomb.png');
   background-size: contain;
   background-size: contain;
-	cursor: not-allowed;
-  background-color: rgb(79, 175, 68) ;
+  cursor: not-allowed;
+  background-color: rgb(79, 175, 68);
 }
