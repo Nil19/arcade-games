@@ -3,18 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
+
 body {
-  font-family: 'Darker Grotesque'; 
+  margin: 0;
+  padding: 0;
+  font-family: 'Darker Grotesque';
   font-size: 40px;
   color: rgb(228, 228, 228);
   background-color: rgb(15, 15, 15);
-  padding: 16px;
+  background-image: url('images/homepage.svg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
 }
 
-.header {
+.container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -23,10 +29,11 @@ body {
   font-family: 'Press Start 2P';
   padding: 10px;
 }
+
 h1 {
   font-size: 80px;
   font-family: 'Press Start 2P';
-  padding: 10px;
+  padding: 25px;
   margin: 10px;
   text-shadow: 2px 2px rgb(206, 206, 206);
   color: rgb(83, 213, 66);
@@ -35,18 +42,23 @@ h1 {
 .games {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
   gap: 16px;
+  padding-top: 20px;
 }
 
 a {
-  color: rgb(0, 166, 255);
+  color: rgb(83, 213, 66);
   font-family: 'Darker Grotesque';
   text-decoration: none;
 
+  border: 2px solid rgb(83, 213, 66);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
 }
+
 a:hover {
-  color: rgb(228, 228, 228);
+  color: rgb(15, 15, 15);
+  background-color:rgb(83, 213, 66);
 }
