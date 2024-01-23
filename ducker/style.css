@@ -204,12 +204,6 @@ h1 {
   gap: 16px;
 }
 
-.win {
-  background-color: rgb(79, 175, 68);
-  color: rgba(17, 17, 17, 0.849);
-  text-shadow: 2px 2px rgb(237, 237, 237);
-}
-
 .end-game-text {
   font-size: 48px;
   font-family: 'Press Start 2P', cursive;
@@ -220,21 +214,20 @@ h1 {
   font-size: 24px;
   font-family: 'Darker Grotesque', sans-serif;
   padding: 4px 20px 8px 20px;
-  /* width: 50%; */
   cursor: pointer;
   text-transform: uppercase;
   border: 2px solid rgb(79, 175, 68);
   background-color: rgb(17, 17, 17);
-  color: rgb(83, 213, 66);
-}
-.btn-play-again:hover {
-  background-color: rgb(79, 175, 68);
-  color: rgba(17, 17, 17);
+  color: rgb(79, 175, 68);
 }
 
 .btn:hover {
   background-color: rgb(79, 175, 68);
   color: rgba(17, 17, 17);
+}
+
+.btn-full {
+  width: 100%;
 }
 
 /* # Utilities */
