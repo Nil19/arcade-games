@@ -115,3 +115,31 @@ h1 {
 	cursor: not-allowed;
   background-color: rgb(79, 175, 68) ;
 }
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .score {
+    font-size: 20px;
+  }
+
+  .game-container {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .grid, .cell {
+    width: 100%;
+  }
+}
