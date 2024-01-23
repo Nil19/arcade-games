@@ -1,17 +1,3 @@
-/*
-  black: rgb(0, 23, 50); #001732;
-  orange: rgb(241, 117, 78); #f1754e;
-  bg-color: rgb(216, 238, 232);  #d8eee8;
-  bg-dark-color: rgb(203, 224, 221); #cbe0dd;
-  clicked-cell: rgb(157, 197, 199); #9dc5c7;
-  transparent red: rgba(241, 117, 78, 0.7);
-
-  font-family: 'Darker Grotesque', sans-serif;
-  font-family: 'Press Start 2P', cursive;
-*/
-
-/* # Generic */
-
 * {
   margin: 0;
   padding: 0;
@@ -130,4 +116,31 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .score {
+    font-size: 20px;
+  }
+
+  .game-container {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .grid, .cell {
+    width: 100%;
+  }
 }
