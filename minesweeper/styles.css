@@ -116,7 +116,6 @@ h1 {
   background-color: rgb(79, 175, 68) ;
 }
 
-
 @media only screen and (max-width: 768px) {
   body {
     font-size: 30px;
@@ -135,10 +134,12 @@ h1 {
   }
 
   .game-container {
-    width: auto;
+    width: 100%;
+    padding-top: 50px;
   }
 
-  .grid, .cell {
-    width: auto;
+  .cell {
+    width: 30px;
+    height: 30px;
   }
 }
