@@ -2,6 +2,6 @@ ARCADE GAMES
 
 Minesweeper\
 Stacker\
-Ducker\
+Ducker
 
 Built using HTML, CSS and JavaScript. 
