@@ -172,7 +172,7 @@ function endGame(reason) {
 function countdown() {
   if (time != 0) {
     time--;
-    timer.innerText = time.toString().padStarts(5, '0');
+    timer.innerText = time.toString().padStart(5, '0');
   }
 
   if (time === 0) {

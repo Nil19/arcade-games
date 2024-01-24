@@ -12,8 +12,9 @@ body {
   color: rgb(228, 228, 228);
   background-color: rgb(15, 15, 15);
   background-image: url('images/homepage.svg');
-  background-size: cover;
-  background-position: center;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -61,4 +62,18 @@ a {
 a:hover {
   color: rgb(15, 15, 15);
   background-color:rgb(83, 213, 66);
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 50px;
+
+  }
+  body {
+    background-size: 180%;
+  }
+  a {
+    padding: 10px;
+    font-size: 30px;
+  }
 }

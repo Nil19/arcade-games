@@ -117,3 +117,9 @@ h1 {
 .hidden {
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .game-container {
+    padding-top: 50px;
+  }
+}
