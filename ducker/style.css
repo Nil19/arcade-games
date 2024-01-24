@@ -219,6 +219,9 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
+  * {
+    overflow-x: hidden !important;
+  }
   .game-container {
     padding-top: 50px;
   }
