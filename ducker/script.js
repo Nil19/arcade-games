@@ -203,3 +203,4 @@ playAgainBtn.addEventListener('click', function () {
   location.reload();
 });
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
