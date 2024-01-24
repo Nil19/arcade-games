@@ -65,12 +65,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    overflow-x: hidden !important;
-  }
-
-  .container {
-    max-width: 100% !important;
+  * {
     overflow-x: hidden !important;
   }
   h1 {
