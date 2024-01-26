@@ -64,7 +64,20 @@ function drawGrid() {
     });
   });
 }
+// Touch events for other devices
 
+grid.addEventListener("touchstart", e => {
+  
+})
+document.addEventListener("touchstart", e => {
+  console.log("Start")
+})
+document.addEventListener("touchmove", e => {
+  console.log("Move")
+})
+document.addEventListener("touchend", e => {
+  console.log("End")
+})
 
 // DUCK FUNCTIONS
 function placeDuck() {
