@@ -143,35 +143,35 @@ grid.addEventListener('touchstart', function (event) {
 grid.addEventListener('touchend', function (event) {
   touchendX = event.changedTouches[0].screenX;
   touchendY = event.changedTouches[0].screenY;
-  handleGesture(event);
+  handleGesture();
 }, false);
 
-function handleGesture(event) {
-  const gesture = event.gesture;
-  console.log(gesture);
+function handleGesture() {
+  const deltaX = touchendX - touchstartX;
+  const deltaY = touchendY - touchstartY;
+
   gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
 
-  if (touchendX < touchstartX) {
-    if (duckPosition.x > 0) duckPosition.x--;
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (deltaX > 0 && duckPosition.x < 8) {
+      duckPosition.x++; // Swipe right
+      console.log('Swiped Right');
+    } else if (deltaX < 0 && duckPosition.x > 0) {
+      duckPosition.x--; // Swipe left
+      console.log('Swiped Left');
+    }
+  } else {
+    if (deltaY > 0 && duckPosition.y < 8) {
+      duckPosition.y++; // Swipe down
+      console.log('Swiped Down');
+    } else if (deltaY < 0 && duckPosition.y > 0) {
+      duckPosition.y--; // Swipe up
+      console.log('Swiped Up');
+    }
   }
 
-  if (touchendX > touchstartX) {
-    if (duckPosition.x < 8) duckPosition.x++;
-  }
-
-  if (touchendY < touchstartY) {
-  }
-
-  if (touchendY > touchstartY) {
-    if (duckPosition.y > 0) duckPosition.y--;
-  }
-
-  if (touchendY === touchstartY) {
-    if (duckPosition.y < 8) duckPosition.y++;
-  }
   render();
 }
-
 
 
 function updateDuckPosition() {
