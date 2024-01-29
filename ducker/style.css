@@ -217,6 +217,9 @@ h1 {
 .hidden {
   display: none;
 }
+.mobile-button {
+  display:none;
+}
 
 @media only screen and (max-width: 600px) {
   * {
@@ -246,6 +249,18 @@ h1 {
     height: 40px;
   }
   .game-board {
-    margin: 0px 20px 10px 20px;
+    margin: 0px 0px 10px 0px;
+  }
+  .mobile-button {
+    outline: none;
+    cursor: pointer;
+    box-shadow: 3px 5px 0px 0px rgba(0,0,0,0.75);
+    border: 2px solid rgb(79, 175, 68);
+    background-color: rgb(17, 17, 17);
+    color: rgb(79, 175, 68);
+    
+    padding: 4px 20px 8px 20px;
+    display: flex;
+    justify-content: flex-end;
   }
 }
