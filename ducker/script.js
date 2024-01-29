@@ -64,20 +64,23 @@ function drawGrid() {
     });
   });
 }
+
+
 // Touch events for other devices
 
-grid.addEventListener("touchstart", e => {
+
+// grid.addEventListener("touchstart", e => {
   
-})
-document.addEventListener("touchstart", e => {
-  console.log("Start")
-})
-document.addEventListener("touchmove", e => {
-  console.log("Move")
-})
-document.addEventListener("touchend", e => {
-  console.log("End")
-})
+//})
+//document.addEventListener("touchstart", e => {
+  //console.log("Start")
+//})
+//document.addEventListener("touchmove", e => {
+  //console.log("Move")
+//})
+//document.addEventListener("touchend", e => {
+  //console.log("End")
+//})
 
 // DUCK FUNCTIONS
 function placeDuck() {
@@ -85,6 +88,17 @@ function placeDuck() {
   gridMatrix[duckPosition.y][duckPosition.x] = 'duck';
   // gridMatrix[8][4]
 }
+
+grid.addEventListener('touchstart', function (event) {
+  touchstartX = event.changedTouches[0].screenX;
+  touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+grid.addEventListener('touchend', function (event) {
+  touchendX = event.changedTouches[0].screenX;
+  touchendY = event.changedTouches[0].screenY;
+  handleGesture();
+}, false);
 
 function moveDuck(event) {
   const key = event.key;
@@ -116,6 +130,49 @@ function moveDuck(event) {
 
   render();
 }
+
+//TOUCH EVENTS
+
+let touchstartX, touchstartY, touchendX, touchendY;
+
+grid.addEventListener('touchstart', function (event) {
+  touchstartX = event.changedTouches[0].screenX;
+  touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+grid.addEventListener('touchend', function (event) {
+  touchendX = event.changedTouches[0].screenX;
+  touchendY = event.changedTouches[0].screenY;
+  handleGesture(event);
+}, false);
+
+function handleGesture(event) {
+  const gesture = event.gesture;
+  console.log(gesture);
+  gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
+
+  if (touchendX < touchstartX) {
+    if (duckPosition.x > 0) duckPosition.x--;
+  }
+
+  if (touchendX > touchstartX) {
+    if (duckPosition.x < 8) duckPosition.x++;
+  }
+
+  if (touchendY < touchstartY) {
+  }
+
+  if (touchendY > touchstartY) {
+    if (duckPosition.y > 0) duckPosition.y--;
+  }
+
+  if (touchendY === touchstartY) {
+    if (duckPosition.y < 8) duckPosition.y++;
+  }
+  render();
+}
+
+
 
 function updateDuckPosition() {
   gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
