@@ -153,7 +153,7 @@ function handleGesture() {
   gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
 
   if (Math.abs(deltaX) > Math.abs(deltaY)) {
-    if (deltaX > 0 && duckPosition.x < 8) {
+    if (deltaX > 0 && duckPosition.x < 4) {
       duckPosition.x++; // Swipe right
       console.log('Swiped Right');
     } else if (deltaX < 0 && duckPosition.x > 0) {
@@ -161,7 +161,7 @@ function handleGesture() {
       console.log('Swiped Left');
     }
   } else {
-    if (deltaY > 0 && duckPosition.y < 8) {
+    if (deltaY > 0 && duckPosition.y < 4) {
       duckPosition.y++; // Swipe down
       console.log('Swiped Down');
     } else if (deltaY < 0 && duckPosition.y > 0) {
