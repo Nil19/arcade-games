@@ -4,7 +4,6 @@ const time = document.querySelector('.timer');
 const endGameScreen = document.querySelector('.end-game-screen');
 const endGameText = document.querySelector('.end-game-text');
 const playAgainBtn = document.querySelector('.play-again');
-const mobileButtons = document.querySelector('.mobile-button');
 
 // Nested Array
 const gridMatrix = [
@@ -71,39 +70,6 @@ function placeDuck() {
   //gridMatrix[8][4]
 }
 
-function render() {
-  placeDuck();
-  checkPosition();
-  drawGrid();
-}
-
-window.addEventListener('load', function () {
-  mobileButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const direction = button.innerText;
-
-      gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
-
-      switch (direction) {
-        case '↑':
-          moveDuck('up');
-          break;
-        case '↓':
-          moveDuck('down');
-          break;
-        case '←':
-          moveDuck('left');
-          break;
-        case '→':
-          moveDuck('right');
-          break;
-      }
-      render();
-    });
-  });
-});
-
-
 function moveDuck(event) {
   const key = event.key;
   console.log(key);
@@ -113,27 +79,60 @@ function moveDuck(event) {
     case 'ArrowUp':
     case 'w':
     case 'W':
+    case 'up':
       if (duckPosition.y > 0) duckPosition.y--;
       break;
     case 'ArrowDown':
     case 's':
     case 'S':
+    case 'down':
       if (duckPosition.y < 8) duckPosition.y++;
       break;
     case 'ArrowLeft':
     case 'a':
     case 'A':
+    case 'left':
       if (duckPosition.x > 0) duckPosition.x--;
       break;
     case 'ArrowRight':
     case 'd':
     case 'D':
+    case 'right':
       if (duckPosition.x < 8) duckPosition.x++;
       break;
   }
 
   render();
 }
+
+window.addEventListener('load', function () {
+  const mobileButtons = document.querySelectorAll('.mobile-button');
+
+  mobileButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const direction = button.innerText;
+
+      gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
+
+      switch (direction) {
+        case '↑':
+          if (duckPosition.y > 0) duckPosition.y--;
+          break;
+        case '↓':
+          if (duckPosition.y < 8) duckPosition.y++;
+          break;
+        case '←':
+          if (duckPosition.x > 0) duckPosition.x--;
+          break;
+        case '→':
+          if (duckPosition.x < 8) duckPosition.x++;
+          break;
+      }
+      render();
+    });
+  });
+});
+
 
 function updateDuckPosition() {
   gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
