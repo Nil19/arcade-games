@@ -225,7 +225,7 @@ h1 {
   * {
     overflow-x: hidden !important;
     overflow-y: hidden !important;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   .game-container {

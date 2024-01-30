@@ -121,6 +121,8 @@ h1 {
 @media only screen and (max-width: 600px) {
   * {
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    box-sizing: border-box;
   }
   .game-container {
     padding-top: 50px;
