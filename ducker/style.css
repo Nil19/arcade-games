@@ -217,52 +217,75 @@ h1 {
 .hidden {
   display: none;
 }
-.mobile-button {
-  display:none;
+.mobile-btn-contaner{
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
   * {
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    box-sizing: border-box
   }
+
   .game-container {
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   h1 {
     font-size: 30px;
   }
+
   .score {
-    margin: 30px;
+    margin: 5px;
     padding: 10px;
   }
+
   .btn {
-    margin: 0 16px 0 16px;
+    width: 100%;
   }
+
   .grid {
     width: calc(40px * 9);
-    /* change multiplier based on grid row count */
     height: calc(40px * 9);
-    /* change multiplier based on game column count */
   }
+
   .cell {
     width: 40px;
     height: 40px;
   }
+
   .game-board {
-    margin: 0px 0px 10px 0px;
+    display: grid;
+    margin: 0px 20px 30px 20px;
+    gap: 5px;
   }
-  .mobile-button {
+
+  .mobile-btn-contaner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .mobile-button1,
+  .mobile-button2 {
     outline: none;
     cursor: pointer;
-    box-shadow: 3px 5px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
     border: 2px solid rgb(79, 175, 68);
     background-color: rgb(17, 17, 17);
     color: rgb(79, 175, 68);
-    
+    font-size: 20px;
+  }
+
+  .mobile-button1 {
+    padding: 4px 60px 8px 60px;
+    margin: 5px;
+  }
+  .mobile-button2 {
     padding: 4px 20px 8px 20px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: auto;
+    margin: 5px;
   }
 }

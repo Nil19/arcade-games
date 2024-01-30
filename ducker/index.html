@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ducker</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ducker</title>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <!-- Container element for the game board -->
-    <div class="game-container">
-      <!-- Game title and timer -->
-      <header class="game-panel">
-        <h1>Ducker</h1>
-        <div class="score">
-          <span>TIME</span>
-          <span class="timer">00015</span>
-        </div>
-      </header>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-      <main class="game-board">
-        <!-- Game grid -->
-        <div class="grid"></div>
+<body>
+  <!-- Container element for the game board -->
+  <div class="game-container">
+    <!-- Game title and timer -->
+    <header class="game-panel">
+      <h1>Ducker</h1>
+      <div class="score">
+        <span>TIME</span>
+        <span class="timer">00015</span>
+      </div>
+    </header>
 
-        <!-- Game over -->
-        <div class="end-game-screen hidden">
-          <h2 class="end-game-text">Game<br />Over</h2>
-          <button class="btn play-again">Play Again</button>
-        </div>
-      </main>
-      <a href="../index.html"><button class="btn btn-full">Back</button></a>
-      <button class="mobile-button">↑</button>
-      <button class="mobile-button">→</button>
-      <button class="mobile-button">←</button>
-      <button class="mobile-button">↓</button>
+    <main class="game-board">
+      <!-- Game grid -->
+      <div class="grid"></div>
+
+      <!-- Game over -->
+      <div class="end-game-screen hidden">
+        <h2 class="end-game-text">Game<br />Over</h2>
+        <button class="btn play-again">Play Again</button>
+      </div>
+    </main>
+    <div class="mobile-btn-contaner">
+      <button class="mobile-button1">↑</button>
     </div>
+    <div class="mobile-btn-contaner">
+      <button class="mobile-button2">→</button>
+      <button class="mobile-button2">←</button>
+    </div>
+    <div class="mobile-btn-contaner">
+      <button class="mobile-button1">↓</button>
+    </div>
+    <a href="../index.html"><button class="btn btn-full">Back</button></a>
+  </div>
 
-    <!-- JavaScript -->
-    <script src="./script.js"></script>
-  </body>
+  <!-- JavaScript -->
+  <script src="./script.js"></script>
+</body>
+
 </html>
