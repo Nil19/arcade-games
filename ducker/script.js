@@ -109,23 +109,26 @@ window.addEventListener('load', function () {
   const mobileButtons = document.querySelectorAll('.mobile-button');
 
   mobileButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('touchstart', function (event) {
+      event.preventDefault();
+      
       const direction = button.innerText;
+      console.log(direction);
 
       gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
 
       switch (direction) {
         case '↑':
-          if (duckPosition.y > 0) duckPosition.y--;
+          moveDuck('up');
           break;
         case '↓':
-          if (duckPosition.y < 8) duckPosition.y++;
+          moveDuck('down');
           break;
         case '←':
-          if (duckPosition.x > 0) duckPosition.x--;
+          moveDuck('left');
           break;
         case '→':
-          if (duckPosition.x < 8) duckPosition.x++;
+          moveDuck('right');
           break;
       }
       render();
