@@ -70,7 +70,7 @@ function updateScore() {
 // Function for when the game ends
 function endGame(isVictory) {
   if (isVictory) {
-    endGameText.innerHTML = 'YOU<br>WON';
+    endGameText.innerHTML = 'YOU<br>WIN';
     endGameScreen.classList.add('win');
   }
 

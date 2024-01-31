@@ -103,7 +103,7 @@ function moveBar() {
 //end game function
 function endGame(isVictory) {
   if (isVictory) {
-    endGameText.innerHTML = 'YOU<br>WON!';
+    endGameText.innerHTML = 'YOU<br>WIN!';
     endGameScreen.classList.add('win');
   }
   // removing the hidden class from html
