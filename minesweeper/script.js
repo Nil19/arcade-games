@@ -10,7 +10,7 @@ const playAgainButton = document.querySelector('.play-again');
 
 //Constants
 const totalCells = 100;
-const totalBombs = 10;
+const totalBombs = 15;
 const maxScore = totalCells - totalBombs;
 const bombsList = []; // this is an array
 const gridWidth = 10;
