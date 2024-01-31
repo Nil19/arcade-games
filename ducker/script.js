@@ -106,27 +106,26 @@ function moveDuck(event) {
 }
 
 window.addEventListener('load', function () {
-  const mobileButtons = document.querySelectorAll('.mobile-button');
+  const mobileButtons = document.querySelectorAll('.mobile-button1, .mobile-button2');
 
   mobileButtons.forEach(button => {
     button.addEventListener('click', function() {
       const direction = button.innerText;
-      console.log(direction);
 
       gridMatrix[duckPosition.y][duckPosition.x] = contentBeforeDuck;
 
       switch (direction) {
         case '↑':
-          moveDuck('up');
+          if (duckPosition.y > 0) duckPosition.y--;
           break;
         case '↓':
-          moveDuck('down');
+          if (duckPosition.y < 8) duckPosition.y++;
           break;
         case '←':
-          moveDuck('left');
+          if (duckPosition.x > 0) duckPosition.x--;
           break;
         case '→':
-          moveDuck('right');
+          if (duckPosition.x < 8) duckPosition.x++;
           break;
       }
       render();
