@@ -109,9 +109,7 @@ window.addEventListener('load', function () {
   const mobileButtons = document.querySelectorAll('.mobile-button');
 
   mobileButtons.forEach(button => {
-    button.addEventListener('touchstart', function (event) {
-      event.preventDefault();
-      
+    button.addEventListener('click', function() {
       const direction = button.innerText;
       console.log(direction);
 
