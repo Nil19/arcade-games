@@ -133,14 +133,14 @@ h1 {
     padding: 10px;
   }
   .grid {
-    width: calc(38px * 10);
+    width: calc(34px * 10);
     /* change multiplier based on grid row count */
-    height: calc(38px * 10);
+    height: calc(34px * 10);
     /* change multiplier based on game column count */
   }
   .cell {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
   .btn {
     font-size: 20px;
