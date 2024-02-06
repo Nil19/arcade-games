@@ -123,33 +123,33 @@ h1 {
     box-sizing: border-box;
   }
   .game-container {
-    padding-top: 50px;
+    padding-top: 5vh;
   }
   h1 {
     font-size: 25px;
   }
   .score {
-    margin: 10px;
-    padding: 10px;
+    margin: 1vh;
+    padding: 1vh;
   }
   .grid {
-    width: calc(34px * 10);
+    width: calc(4vh * 10);
     /* change multiplier based on grid row count */
-    height: calc(34px * 10);
+    height: calc(4vh * 10);
     /* change multiplier based on game column count */
   }
   .cell {
-    width: 34px;
-    height: 34px;
+    width: 4vh;
+    height: 4vh;
   }
   .btn {
     font-size: 20px;
-    margin: 0px 10px 0px 30px;
+    margin: 0vh 1.5vh 0vh 1.5vh;
   }
   .game-board {
-    margin: 0px 30px 10px 30px;
+    margin: 0vh 1.5vh 1vh 1.5vh;
   }
   .cell-clicked {
-    font-size: 25px;
+    font-size: 0.5em;
   }
 }

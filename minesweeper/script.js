@@ -83,9 +83,11 @@ function countBombsNearby(row, col) {
   let count = 0;
   for (let i = row - 1; i <= row + 1; i++) {
     for (let j = col - 1; j <= col + 1; j++) {
-      const cellIndex = i * gridWidth + j + 1;
-      if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth && bombsList.includes(cellIndex)) {
-        count++;
+      if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth) {
+        const cellIndex = i * gridWidth + j;
+        if (bombsList.includes(cellIndex)) {
+          count++;
+        }
       }
     }
   }
