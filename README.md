@@ -1,5 +1,6 @@
 # 🕹️ ARCADE GAMES 🕹️
 
+Includes:\
 Minesweeper\
 Stacker\
 Ducker
