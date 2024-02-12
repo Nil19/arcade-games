@@ -1,125 +1,63 @@
-// const (constant - never changes)
-// let (let me change)
-
-//Constants
-const totalCells = 100;
-const totalBombs = 15;
-const maxScore = totalCells - totalBombs;
-const bombsList = []; // this is an array
-const gridWidth = 10;
-const gridHeight = 10;
-
-//pulling html to js. Elements
-const scoreCounter = document.querySelector('.score');
+// Select the relevant elements from the page
 const grid = document.querySelector('.grid');
+const scoreCounter = document.querySelector('.score');
 const endGameScreen = document.querySelector('.end-screen');
-const endGameText = document.querySelector('.end-screen-text');
+const endGameText = document.querySelector('.end-game-text');
 const playAgainButton = document.querySelector('.play-again');
+
+// Initialise the variables needed for the game setup
+const totalCells = 100;
+const totalBombs = 6;
+const maxScore = totalCells - totalBombs;
+const bombsList = [];
 
 let score = 0;
 
-//create grid
-function createGrid() {
-  for (let row = 0; row < gridHeight; row++) {
-    for (let col = 0; col < gridWidth; col++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      cell.setAttribute('data-row', row);
-      cell.setAttribute('data-col', col);
-      cell.addEventListener('click', cellClickHandler);
-      cell.addEventListener('touchstart', cellClickHandler);
-      grid.appendChild(cell);
-    }
-  }
-}
-
 // Generate a list of unique bombs
-function generateBombs() {
-  while (bombsList.length < totalBombs) {
-    // Generate a random number
-    const randomNumber = Math.floor(Math.random() * totalCells) + 1;
+while (bombsList.length < totalBombs) {
+  // Generate a random number
+  const randomNumber = Math.floor(Math.random() * totalCells) + 1;
 
-    // Add the number to the list if not already included
-    if (!bombsList.includes(randomNumber)) {
-      bombsList.push(randomNumber);
+  // Add the number to the list if not already included
+  if (!bombsList.includes(randomNumber)) {
+    bombsList.push(randomNumber);
+  }
+}
+
+for (let i = 1; i <= totalCells; i++) {
+  // Create a cell
+  const cell = document.createElement('div');
+  cell.classList.add('cell');
+
+  // Manage the "click" event for the cell
+  cell.addEventListener('click', function () {
+    // Don't do anything if it is already clicked
+    if (cell.classList.contains('cell-clicked')) {
+      return;
     }
-  }
-}
 
-function initGame() {
-  createGrid();
-  generateBombs();
-}
-
-// Cell Clicks
-
-function cellClickHandler(event) {
-  const cell = event.target;
-  const row = parseInt(cell.getAttribute('data-row'));
-  const col = parseInt(cell.getAttribute('data-col'));
-  const cellIndex = row * gridWidth + col + 1;
-
-  if (cell.classList.contains('cell-clicked')) {
-    return;
-  }
-
-  if (bombsList.includes(cellIndex)) {
-    cell.classList.add('cell-bomb');
-    endGame(false);
-  } else {
-    cell.classList.add('cell-clicked');
-    const bombsNearby = countBombsNearby(row, col);
-    if (bombsNearby > 0) {
-      cell.innerText = bombsNearby;
+    if (bombsList.includes(i)) {
+      cell.classList.add('cell-bomb');
+      endGame(false);
     } else {
-      // If no bombs nearby, recursively reveal adjacent cells
-      revealAdjacentCells(row, col);
+      cell.classList.add('cell-clicked');
+      updateScore();
     }
-    updateScore();
-  }
+  })
+
+  // Put the cell in the grid
+  grid.appendChild(cell);
 }
 
-// Count bombs nearby a cell
-function countBombsNearby(row, col) {
-  let count = 0;
-  for (let i = row - 1; i <= row + 1; i++) {
-    for (let j = col - 1; j <= col + 1; j++) {
-      if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth) {
-        const cellIndex = i * gridWidth + j;
-        if (bombsList.includes(cellIndex)) {
-          count++;
-        }
-      }
-    }
-  }
-  return count;
-}
+// *---------------------------
+// * FUNCTIONS
+// *---------------------------
 
-// Recursive function to reveal adjacent cells with no bombs nearby
-function revealAdjacentCells(row, col) {
-  for (let i = row - 1; i <= row + 1; i++) {
-    for (let j = col - 1; j <= col + 1; j++) {
-      const cellIndex = i * gridWidth + j + 1;
-      const cell = document.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
-      if (i >= 0 && i < gridHeight && j >= 0 && j < gridWidth && !cell.classList.contains('cell-clicked')) {
-        cell.classList.add('cell-clicked');
-        const bombsNearby = countBombsNearby(i, j);
-        if (bombsNearby === 0) {
-          revealAdjacentCells(i, j);
-        } else {
-          cell.innerText = bombsNearby;
-        }
-      }
-    }
-  }
-}
-
-// Score update
-
+// Function to increment the score and display it
 function updateScore() {
   score++;
   scoreCounter.innerText = score.toString().padStart(5, '0');
-
+  
   if (score === maxScore) {
     endGame(true);
   }
@@ -127,12 +65,12 @@ function updateScore() {
 
 // Function for when the game ends
 function endGame(isVictory) {
+  revealAllBombs(); // Reveal bombs before showing the end game screen
   if (isVictory) {
-    endGameText.innerHTML = 'YOU<br>WIN';
+    endGameText.innerHTML = 'YOU<br>WON';
     endGameScreen.classList.add('win');
   }
 
-  revealAllBombs();
   endGameScreen.classList.remove('hidden');
 }
 
@@ -152,5 +90,3 @@ function revealAllBombs() {
 playAgainButton.addEventListener('click', function () {
   window.location.reload();
 });
-
-initGame();
