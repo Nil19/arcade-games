@@ -1,13 +1,6 @@
 // const (constant - never changes)
 // let (let me change)
 
-//pulling html to js. Elements
-const scoreCounter = document.querySelector('.score');
-const grid = document.querySelector('.grid');
-const endGameScreen = document.querySelector('.end-screen');
-const endGameText = document.querySelector('.end-screen-text');
-const playAgainButton = document.querySelector('.play-again');
-
 //Constants
 const totalCells = 100;
 const totalBombs = 15;
@@ -15,6 +8,13 @@ const maxScore = totalCells - totalBombs;
 const bombsList = []; // this is an array
 const gridWidth = 10;
 const gridHeight = 10;
+
+//pulling html to js. Elements
+const scoreCounter = document.querySelector('.score');
+const grid = document.querySelector('.grid');
+const endGameScreen = document.querySelector('.end-screen');
+const endGameText = document.querySelector('.end-screen-text');
+const playAgainButton = document.querySelector('.play-again');
 
 let score = 0;
 
