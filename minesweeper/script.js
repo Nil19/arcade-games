@@ -114,11 +114,6 @@ function revealAdjacentCells(row, col) {
   }
 }
 
-
-// *---------------------------
-// * FUNCTIONS
-// *---------------------------
-
 // Score update
 
 function updateScore() {
