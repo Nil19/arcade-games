@@ -27,6 +27,7 @@ function createGrid() {
       cell.setAttribute('data-row', row);
       cell.setAttribute('data-col', col);
       cell.addEventListener('click', cellClickHandler);
+      cell.addEventListener('touchstart', cellClickHandler);
       grid.appendChild(cell);
     }
   }
