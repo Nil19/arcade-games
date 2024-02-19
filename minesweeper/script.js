@@ -3,8 +3,8 @@ const endGameText = document.querySelector('.end-game-text');
 const playAgainButton = document.querySelector('.play-again');
 
 let board = [];
-let rows = 10;
-let columns = 10;
+let rows = 8;
+let columns = 8;
 
 let minesCount = 10;
 let minesLocation = []; // "2-2", "3-4", "2-1"
