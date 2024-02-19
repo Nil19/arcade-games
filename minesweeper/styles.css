@@ -14,50 +14,97 @@ body {
   justify-content: center;
 }
 
-.game-container {
-  background-color: rgb(15, 15, 15);
-  width: calc(480px + 4px);
-  padding-top: 100px;
-}
-
 .game-panel {
-  background-color: rgb(15, 15, 15);
-}
-
-.game-board {
-  border: 2px solid rgb(79, 175, 68);
-  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 h1 {
   font-size: 40px;
   font-family: 'Press Start 2P';
-  padding: 10px;
-  margin: 10px;
   text-shadow: 2px 2px rgb(206, 206, 206);
-  color: rgb(79, 175, 68);
+  color: rgb(83, 213, 66);
   text-align: center;
 }
 
-.score {
-  font-size: 30px;
+h3 {
   display: flex;
   justify-content: space-between;
+  font-size: 30px;
   margin-bottom: 25px;
+  margin-top: 25px;
   color: rgb(79, 175, 68);
 }
 
-.grid {
+#board {
+  width: 500px;
+  height: 500px;
+  border: 5px solid rgb(79, 175, 68);
+  background-color: rgb(17, 17, 17);
+
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 
-.cell {
+#board div {
+  width: 61px;
+  height: 61px;
   border: 1px solid rgb(79, 175, 68);
-  width: 48px;
-  height: 48px;
   cursor: pointer;
+
+  /* text */
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.tile-clicked {
+  background-color: rgb(79, 175, 68);
+}
+
+.x1 {
+  color: rgb(17, 17, 17);
+}
+
+.x2 {
+  color: rgb(17, 17, 17);
+}
+
+.x3 {
+  color: rgb(17, 17, 17);
+}
+
+.x4 {
+  color: rgb(17, 17, 17);
+}
+
+.x5 {
+  color: rgb(17, 17, 17);
+}
+
+.x6 {
+  color: rgb(17, 17, 17);
+}
+
+.x7 {
+  color: rgb(17, 17, 17);
+}
+
+.x8 {
+  color: rgb(17, 17, 17);
+}
+
+#flag-button {
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  background-color: rgb(79, 175, 68);
+  border: none;
+}
+
 
 .end-screen {
   position: absolute;
@@ -99,21 +146,70 @@ h1 {
   color: rgba(17, 17, 17);
 }
 
+#flag-button {
+  font-size: 24px;
+  font-family: 'Darker Grotesque';
+  padding: 4px 20px 8px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid rgb(79, 175, 68);
+  background-color: rgb(17, 17, 17);
+  color: rgb(79, 175, 68);
+}
+
+#flag-button:hover {
+  background-color: rgb(79, 175, 68);
+  color: rgba(17, 17, 17);
+}
+
 .hidden {
   display: none;
 }
 
-.cell-clicked {
-  background-color: rgb(79, 175, 68);
-  cursor: not-allowed;
-}
+@media only screen and (max-width: 600px) {
+  * {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    box-sizing: border-box;
+  }
 
-.cell-bomb {
-  background-image: url('./images/bomb.png');
-  background-size: contain;
-  background-size: contain;
-  cursor: not-allowed;
-  background-color: rgb(79, 175, 68);
+  .game-container {
+    padding-top: 50px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .score {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .grid {
+    width: calc(34px * 10);
+    /* change multiplier based on grid row count */
+    height: calc(34px * 10);
+    /* change multiplier based on game column count */
+  }
+
+  .cell {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn {
+    font-size: 20px;
+    margin: 0px 10px 0px 30px;
+  }
+
+  .game-board {
+    margin: 0px 30px 10px 30px;
+  }
+
+  .cell-clicked {
+    font-size: 25px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -128,28 +224,15 @@ h1 {
   h1 {
     font-size: 25px;
   }
-  .score {
+  .h2 {
     margin: 10px;
     padding: 10px;
   }
-  .grid {
-    width: calc(34px * 10);
-    /* change multiplier based on grid row count */
-    height: calc(34px * 10);
-    /* change multiplier based on game column count */
+  #board {
+    width: 40vh;
+    height: 40vh;
   }
-  .cell {
-    width: 34px;
-    height: 34px;
-  }
-  .btn {
-    font-size: 20px;
-    margin: 0px 10px 0px 30px;
-  }
-  .game-board {
-    margin: 0px 30px 10px 30px;
-  }
-  .cell-clicked {
-    font-size: 25px;
+#board div {
+
   }
 }

@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minesweeper</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper</title>
 
-    <!-- Stylesheet -->
-    <link href="./styles.css" rel="stylesheet" />
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="game-container">
-      <header class="game-panel">
-        <h1>Minesweeper</h1>
-        <div class="score">
-          <span>SCORE:</span>
-          <span>00000</span>
-        </div>
-      </header>
-      <main class="game-board">
-        <div class="grid"></div>
-        <div class="end-screen hidden">
-          <h2 class="end-screen-text">Game<br />Over</h2>
-          <button class="btn play-again">Play Again</button>
-        </div>
-      </main>
-      <a href="../index.html"><button class="btn btn-full">Back</button></a>
+  <!-- Stylesheet -->
+  <link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="game-container">
+    <header class="game-panel">
+      <h1>Minesweeper</h1>
+      <h3>Mines: <span id="mines-count">0</span></h3>
+    </header>
+    <div id="board"></div>
+    <div class="end-screen hidden">
+      <h2 class="end-game-text">Game<br />Over</h2>
+      <button class="btn play-again">Play Again</button>
     </div>
-    <script src="./script.js"></script>
-  </body>
+    <a href="../index.html" class="btn btn-full">Back</a>
+    <button id="flag-button">🚩</button>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
 </html>
