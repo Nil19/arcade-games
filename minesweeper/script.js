@@ -193,3 +193,5 @@ function checkTile(r, c) {
   }
   return 0;
 }
+
+// With the help of https://github.com/ImKennyYip/Minesweeper/tree/master
