@@ -3,8 +3,8 @@ const endGameText = document.querySelector('.end-game-text');
 const playAgainButton = document.querySelector('.play-again');
 
 let board = [];
-let rows = 8;
-let columns = 8;
+let rows = 10;
+let columns = 10;
 
 let minesCount = 10;
 let minesLocation = []; // "2-2", "3-4", "2-1"
@@ -64,11 +64,11 @@ function startGame() {
 function setFlag() {
   if (flagEnabled) {
     flagEnabled = false;
-    document.getElementById("flag-button").style.backgroundColor = "lightgray";
+    document.getElementById("flag-button").style.backgroundColor = "rgba(17, 17, 17)";
   }
   else {
     flagEnabled = true;
-    document.getElementById("flag-button").style.backgroundColor = "darkgray";
+    document.getElementById("flag-button").style.backgroundColor = "rgba(79, 175, 68, 0.662)";
   }
 }
 
